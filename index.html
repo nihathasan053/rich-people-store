@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RICH PEOPLE | Luxury Fashion</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080808;color:#fff;font-family:Arial,sans-serif}
+header{padding:20px 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #292929}
+.logo{font-size:22px;font-weight:900;letter-spacing:2px}
+.logo span,h1 span{color:#c6a568}
+nav a{color:white;text-decoration:none;margin-left:15px;font-size:12px}
+.hero{padding:90px 7%;min-height:430px;display:flex;align-items:center;background:linear-gradient(90deg,#080808 15%,#080808bb),url('https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=1200&q=80') center/cover}
+.hero div{max-width:480px}
+.eyebrow{color:#c6a568;letter-spacing:4px;font-size:12px}
+h1{font-size:clamp(42px,8vw,70px);margin:20px 0}
+p{color:#bbb;line-height:1.8}
+.btn{display:inline-block;background:#c6a568;color:#080808;padding:15px 24px;text-decoration:none;font-size:12px;font-weight:bold;margin-top:15px}
+section{padding:50px 5%}
+h2{font-size:26px}
+.categories,.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.category{padding:25px 10px;background:#151515;border:1px solid #333;text-align:center;color:#c6a568;font-size:12px}
+.product{background:#111;padding-bottom:15px}
+.product img{width:100%;aspect-ratio:3/4;object-fit:cover;background:#222}
+.product h3,.product p,.product button{margin-left:10px;margin-right:10px}
+.product h3{font-size:13px}
+.price{color:#c6a568}
+.product button{width:calc(100% - 20px);padding:10px;background:transparent;color:white;border:1px solid #c6a568}
+.promo{text-align:center;background:#151515;padding:45px 6%}
+footer{text-align:center;padding:30px 10px;border-top:1px solid #333}
+footer small{color:#888}
+@media(max-width:600px){
+header{padding:16px 4%;flex-wrap:wrap;gap:12px}
+.logo{font-size:18px}
+nav a{margin-left:8px}
+.hero{padding:65px 6%;min-height:400px}
+.categories,.products{grid-template-columns:repeat(2,minmax(0,1fr))}
+section{padding:35px 4%}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">RICH <span>PEOPLE</span></div>
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#shop">SHOP</a>
+    <a href="#categories">CATEGORIES</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div>
+    <div class="eyebrow">THE NEW STANDARD</div>
+    <h1>STYLE IS<br>YOUR <span>POWER.</span></h1>
+    <p>Discover your signature look. Premium men's fashion for those who choose to stand apart.</p>
+    <a class="btn" href="#shop">EXPLORE COLLECTION</a>
+  </div>
+</section>
+
+<section id="categories">
+  <div class="eyebrow">SHOP YOUR STYLE</div>
+  <h2>Explore Categories</h2>
+  <div class="categories">
+    <a class="category" href="#shop">T-SHIRTS</a>
+    <a class="category" href="#shop">SHIRTS</a>
+    <a class="category" href="#shop">TROUSERS</a>
+    <a class="category" href="#shop">PANJABI</a>
+  </div>
+</section>
+
+<section id="shop">
+  <div class="eyebrow">CURATED FOR YOU</div>
+  <h2>Featured Collection</h2>
+  <div class="products">
+    <article class="product">
+      <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=500&q=80" alt="Classic T-shirt">
+      <h3>Classic T-Shirt</h3>
+      <p class="price">৳650</p>
+      <button onclick="order('Classic T-Shirt',650)">ORDER NOW</button>
+    </article>
+    <article class="product">
+      <img src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=500&q=80" alt="Premium Shirt">
+      <h3>Premium Shirt</h3>
+      <p class="price">৳1,200</p>
+      <button onclick="order('Premium Shirt',1200)">ORDER NOW</button>
+    </article>
+    <article class="product">
+      <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=500&q=80" alt="Men's Trousers">
+      <h3>Classic Trousers</h3>
+      <p class="price">৳1,000</p>
+      <button onclick="order('Classic Trousers',1000)">ORDER NOW</button>
+    </article>
+    <article class="product">
+      <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=500&q=80" alt="Black T-shirt">
+      <h3>Essential Black Tee</h3>
+      <p class="price">৳750</p>
+      <button onclick="order('Essential Black Tee',750)">ORDER NOW</button>
+    </article>
+  </div>
+</section>
+
+<section class="promo">
+  <div class="eyebrow">RICH PEOPLE</div>
+  <h2>Wear Your Confidence.</h2>
+  <p>Timeless style. Modern identity. Your next favorite look awaits.</p>
+  <a href="#shop" class="btn">SHOP COLLECTION</a>
+</section>
+</main>
+
+<footer>
+  <div class="logo">RICH <span>PEOPLE</span></div>
+  <p>Premium Men's Fashion</p>
+  <small>© 2026 RICH PEOPLE. All rights reserved.</small>
+</footer>
+
+<script>
+function order(name,price){
+  const message = `Hello RICH PEOPLE! I want to order ${name}. Price: ৳${price}. Please share available sizes, colors and delivery details.`;
+  const whatsapp = ""; // Add your WhatsApp number here with country code
+  if(!whatsapp){
+    alert(message + "\n\nShop owner's WhatsApp number has not been configured yet.");
+    return;
+  }
+  window.open("https://wa.me/"+whatsapp+"?text="+encodeURIComponent(message),"_blank");
+}
+</script>
+</body>
+</html>
